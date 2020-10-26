@@ -7,4 +7,7 @@ Express.js
 Typescript,
 Docker,
 Kubernetes,
-Mongodb
+Mongodb,
+Google Cloud Kubernetes Engine,
+Skaffold Development Automation 
+Google Cloud Build
