@@ -1,5 +1,5 @@
-import { Publisher, OrderCancelledEvent, Subjects } from "@pixipanda/common";
+import { Subjects, Publisher, OrderCancelledEvent } from "@pixipanda/common";
 
 export class OrderCancelledPublisher extends Publisher<OrderCancelledEvent> {
-  subject: Subjects.OrdderCancelled = Subjects.OrdderCancelled;
+  subject: Subjects.OrderCancelled = Subjects.OrderCancelled;
 }

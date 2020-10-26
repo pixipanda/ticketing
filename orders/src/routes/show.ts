@@ -1,9 +1,9 @@
-import {
-  NotAuthorizedError,
-  NotFoundError,
-  requireAuth,
-} from "@pixipanda/common";
 import express, { Request, Response } from "express";
+import {
+  requireAuth,
+  NotFoundError,
+  NotAuthorizedError,
+} from "@pixipanda/common";
 import { Order } from "../models/order";
 
 const router = express.Router();
@@ -12,14 +12,11 @@ router.get(
   "/api/orders/:orderId",
   requireAuth,
   async (req: Request, res: Response) => {
-    console.log("Show specific order for a user");
-
     const order = await Order.findById(req.params.orderId).populate("ticket");
 
     if (!order) {
       throw new NotFoundError();
     }
-
     if (order.userId !== req.currentUser!.id) {
       throw new NotAuthorizedError();
     }
