@@ -4,7 +4,8 @@ import {
   requireAuth,
   validateRequest,
   NotFoundError,
-  NotAuthorizedError,, BadRequestError
+  NotAuthorizedError,
+  BadRequestError,
 } from "@pixipanda/common";
 import { Ticket } from "../models/ticket";
 import { TicketUpdatedPublisher } from "../events/publishers/ticket-updated-publisher";
@@ -29,8 +30,8 @@ router.put(
       throw new NotFoundError();
     }
 
-    // If the ticket is reserved, throw an error 
-    if(ticket.orderId) {
+    // If the ticket is reserved, throw an error
+    if (ticket.orderId) {
       throw new BadRequestError("Cannot edit a reserved ticket");
     }
 
