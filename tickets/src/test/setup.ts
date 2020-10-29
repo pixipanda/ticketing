@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import request from "supertest";
 import { app } from "../app";
 import jwt from "jsonwebtoken";
+import { servicesVersion } from "typescript";
 
 declare global {
   namespace NodeJS {
@@ -36,8 +37,9 @@ beforeEach(async () => {
   }
 });
 
-afterAll(async () => {
+afterAll(async (done) => {
   await mongo.stop();
+  done();
 });
 
 global.signin = () => {
