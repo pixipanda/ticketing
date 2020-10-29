@@ -36,8 +36,9 @@ beforeEach(async () => {
   }
 });
 
-afterAll(async () => {
+afterAll(async (done) => {
   await mongo.stop();
+  done();
 });
 
 global.signin = () => {
