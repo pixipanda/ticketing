@@ -1,6 +1,7 @@
 # Ticketing
+
 Ticketing ecommerce application
-Microservice Architecture Ticketing Ecommerce Application 
+Microservice Architecture Ticketing Ecommerce Application
 Components used
 Node.js,
 Express.js
@@ -9,5 +10,5 @@ Docker,
 Kubernetes,
 Mongodb,
 Google Cloud Kubernetes Engine,
-Skaffold Development Automation 
+Skaffold Development Automation,
 Google Cloud Build
